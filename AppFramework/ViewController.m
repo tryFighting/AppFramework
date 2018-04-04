@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "WebViewController.h"
 @interface ViewController ()
 
 @end
@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.centerLabel.text = @"原生";
+    WebViewController *web = [[WebViewController alloc] init];
+    web.requestUrl = @"http://www.baidu.com";
+    [self.navigationController pushViewController:web animated:YES];
 }
 
 
