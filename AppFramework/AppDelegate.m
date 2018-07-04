@@ -215,8 +215,78 @@
  @2如何关联对象
  runtime提供给我们的方法：关联对象，获取关联的对象，移除关联的对象
  当对象释放时，会根据这个策略来决定是否释放关联的对象，策略是RETAIN/COPY时会释放关联的对象，当是ASSIGN,将不会释放
+ */
+/*
+ iOS Runtime之五:方法与消息
+ 一 基本数据类型
+ @1 SEL
+ 选择器，是表示一个方法的selector的指针
+ typedef struct objc_selector *SEL;
+ 方法的selector用于表示运行时方法的名字。OC在编译时会根据每一个方法的名字，参数序列，生成一个唯一的整型标识(Int类型的地址),这个标识就是SEL;
+ SEL sel1 = @selector(method1);
+ 两个类之间，不管他们是父类与子类的关系，还是之间没有这种关系，只要方法名一样，那么方法的SEL就是一样的，不能存在2个同名的方法，即使参数类型不同也不行
+ 当然，不同的类可以拥有相同的selector，不同类的实例对象执行相同的selector时，会在各自的方法列表中去根据selector去寻找自己对应的IMP
+ 本质上，SEL只是一个指向方法的指针，准确的说，只是一个根据方法名hash化了的key值，能唯一代表一个方法，它的存在只是为了加快方法的查询速度。
+ 我们可以在运行时添加新的selector，也可以在运行时获取已存在的selector，我们可以通过三种方法来获取SEL
+ sel_registerName函数  OC编译器提供的@selector() NSSelectorFromString()方法
  
+ @2 IMP
+ IMP实际上是一个函数指针，指针方法实现的首地址。
+ id(*IMP)(id,SEL,...)
+ 这个函数使用当前CPU架构实现标准的C调用约定
+ 第一个参数是指向self的指针，如果是实例方法则是实例的内存地址，如果是类方法，则是指向元类的指针，第二个参数是selector
+ SEL就是为了查找方法的最终实现IMP的，由于每个方法对应唯一的sel,因此我们可以通过SEL方便快速准确的获得它对应的IMP
+ 通过取得IMP，我们可以跳过runtime的消息传递机制，直接执行IMP指向的函数实现，这样省去了runtime消息传递过程中所做的一系列查找操作，会比直接向对象发送消息高效一些
+ @3 Method用于表示类定义中的方法
+ typedef struct objc_method *Method;
+ struct objc_method{
+ SEL method_name;
+ char *method_types;
+ IMP method_imp;
+ }
  
+ 我们可以看到该结构体中包含一个SEL和IMP,实际上相当于SEL和IMP之间作了一个映射，有了SEL，我们便可以找到对应的IMP，从而调用方法的实现代码
+ @4 objc_method_description
+ struct objc_method_description{SEL name; char *types;}
+ 
+ 二 方法相关操作函数
+ runtime提供了一系列的方法来处理与方法相关的操作，包括方法本身及SEL
+ @1 方法操作相关函数
+ //调用指定方法的实现
+ id method_invoke(id receiver,Method m,...)
+ method_invoke函数，返回的是实际实现的返回值，参数receiver不能为空
+ //调用返回一个数据结构的方法实现
+ void method_invoke_stret(id receiver,Method m,...)
+ //获取方法名
+ SEL method_getName(Method m)
+ //返回方法的实现
+ IMP method_getImplementation(Method m)
+ // 获取方法的指定位置参数的类型字符串
+ char * method_copyArgumentType ( Method m, unsigned int index );
+ 
+ // 通过引用返回方法的返回值类型字符串
+ void method_getReturnType ( Method m, char *dst, size_t dst_len );
+ 
+ // 返回方法的参数的个数
+ unsigned int method_getNumberOfArguments ( Method m );
+ 
+ // 通过引用返回方法指定位置参数的类型字符串
+ void method_getArgumentType ( Method m, unsigned int index, char *dst, size_t dst_len );
+ 
+ // 返回指定方法的方法描述结构体
+ struct objc_method_description * method_getDescription ( Method m );
+ 
+ // 设置方法的实现
+ IMP method_setImplementation ( Method m, IMP imp );
+ 
+ // 交换两个方法的实现
+ void method_exchangeImplementations ( Method m1, Method m2 );
+ 
+ @2方法选择器
+ sel_registerName(const char *str);//注册一个方法，将方法名映射到一个选择器，并返回这个选择器
+ 必须在runtime系统中注册一个方法名以获取方法的选择器
+ 
+ 三，方法调用流程
  */
 @implementation AppDelegate
 /*
