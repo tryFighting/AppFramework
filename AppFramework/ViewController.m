@@ -11,6 +11,7 @@
 #import <objc/runtime.h>
 #import "Student.h"
 #import "NSArray+Blog.h"
+#import "SUTRuntimeMethod.h"
 @interface ViewController ()
 {
     NSArray *arr;
@@ -148,6 +149,9 @@ void method1(id self,SEL _cmd,int a){
     [self testVersion];
     
     [self addClassTest];
+    
+    SUTRuntimeMethod *method = [[SUTRuntimeMethod alloc] init];
+    [method test];
 }
 /*
  测试成员变量

@@ -287,6 +287,64 @@
  必须在runtime系统中注册一个方法名以获取方法的选择器
  
  三，方法调用流程
+ @1消息发送：在OC中，消息直到运行时才绑定到方法实现上，编译器会将消息表达式[receiver message]转为一个消息函数的调用
+ objc_msgSend(receiver,selector,arg1,arg2,...)
+ 这个函数完成了动态绑定的所有事情：
+ 首先它找到selector对应的方法实现。因为同一个方法可能在不同类中有不同的实现，所以我们需要依赖于接受者的类来找到确切的实现
+ 它调用方法实现，并将接收者对象及方法的所有参数传给它
+ 最后，它将实现返回的值作为它自己返回的值
+ 
+ 消息的关键在于objc_class,这个结构体有两个字段是我们再分发消息的关注的
+ @1指向父类的指针
+ @2一个类的方法分发表，即methodLists
+ 当我们创建一个新对象时，先以其分配内存，并初始化其成员变量，其中isa指针也会被初始化，让对象可以访问类及类的继承体系
+ 消息的基本框架:
+ the root class (NSObject) super class selector address
+ the objects superclass  super class selector address
+ the objects class  super class selector address
+ isa  instance variable instance variable ...
+ 当消息发送给一个对象时，objc_msgSend通过对象的isa指针获取到类的结构体，然后在方法分发表里面查找方法的selector，如果没有找到selector，则通过objc_msgSend结构体中的指向父类的指针找到其父类，并在父类的分发表里查找方法的selector，以上，会一直沿着类的继承体系到达NSObject类，一旦定位到selector，函数会就获取到了实现的入口点，并传入相应的参数来执行方法的具体实现。如果最后没有定位到selector，就会发消息转发流程
+ 为了加速消息的处理，运行时系统缓存使用过的selector及其对应的方法的地址
+ 
+ 隐藏参数
+ 消息接收对象；方法的selector
+ 他们事编译期间被插入实现代码的
+ 我们可以使用self来引用接受者对象，使用_cmd来引用选择器
+ 
+ 获取方法地址
+ NSObject类提供了methodForSelecctor方法，让我们可以获取到方法的指针，然后通过这个指针来调用实现代码
+ 需要注意的就是函数指针的前两个参数必须是id和SEL
+ 
+ 四，消息转发
+ if([self respondsToselector:@selector(method)]){
+ [self performSelector:@selector(method)];
+ }
+ 消息转发机制基本上分为三个步骤
+ (1)动态方法解析
+ 对象在接收到未知的消息时，首先调用所属类的类方法和实例方法
+ +resolveInstanceMethod   +resolveClassMethod
+ (2)备用接收者
+ - (id)forwardingTargetForSelector:(SEL)aSelector
+ 如果一个对象实现了这个方法，并返回一个非nil得结果，则这个对象会作为消息的新接收者，且消息会被分发到这个对象。当然这个对象不能是self自身，否则会出现无限循环，当然没有指定相应的对象来处理aSelector，则是应该调用父类的实现来返回结果。
+ 使用这个方法通常在对象内部，可能还有一系列其他对象能处理该消息，我们可以借这些对象来处理消息并返回
+ (3)完整转发
+ - (void)forwardInvocation:(NSInvocation *)anInvocation
+ 运行时系统会在最后一次机会将消息转发给其他对象。对象会创建一个表现消息的NSInvocation中，包括selector，目标和参数，我们
+ 可以在forwardInvocation方法中选择将消息转发给其他对象
+ 
+ forwardInvocation方法的实现有两个任务
+ (1)定位可以响应封装在anInvocation中的消息的对象
+ (2)使用anInvocation作为参数，将消息发送到选中的对象，anInvocation将会保留调用结果，运行时系统会提取这一结果并将其发送
+ 到消息的原始发送者
+ 
+ 这个方法可以实现一些更复杂的功能，我们可以对消息的内容进行修改，比如追回一个参数等，然后再去触发消息
+ 若发现某个消息不应由本类处理，则应调用父类的同名方法，以便继承体系中的每个类都有机会处理此调用请求
+ 必须重新 methodSignatureForSelector:(SEL)aSelector
+ 使用这个方法获取消息来创建NSInvocation对象，为给定的selector提供一个合适的方法签名。
+ 
+ 消息转发与多重继承
+ 多重继承将不同的功能集成到一个对象中,它会让对象变得过大，涉及的东西过多；
+ 而消息转发将功能分解到独立的小的对象中，并通过某种方式将这些对象链接起来，并做响应的消息转发
  */
 @implementation AppDelegate
 /*

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		657E932D33FCA26408A5F4FA /* libPods-AppFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB5CE23D48366AEDA4F4C8 /* libPods-AppFramework.a */; };
+		7B2240D120EDF23300E45BDC /* SUTRuntimeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2240D020EDF23300E45BDC /* SUTRuntimeMethod.m */; };
 		7B4A6A4320EA0C9F00FA9963 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A6A4220EA0C9F00FA9963 /* Student.m */; };
 		7BA6E8BF20ECA14C006F04D0 /* NSArray+Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6E8BE20ECA14C006F04D0 /* NSArray+Blog.m */; };
 		7BF2182A20746B6500F45A01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2182920746B6500F45A01 /* AppDelegate.m */; };
@@ -43,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		51BB5CE23D48366AEDA4F4C8 /* libPods-AppFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppFramework.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B2240CF20EDF23300E45BDC /* SUTRuntimeMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SUTRuntimeMethod.h; sourceTree = "<group>"; };
+		7B2240D020EDF23300E45BDC /* SUTRuntimeMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SUTRuntimeMethod.m; sourceTree = "<group>"; };
 		7B4A6A4120EA0C9F00FA9963 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7B4A6A4220EA0C9F00FA9963 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		7BA6E8BD20ECA14C006F04D0 /* NSArray+Blog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Blog.h"; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 			children = (
 				7BF2182820746B6500F45A01 /* AppDelegate.h */,
 				7BF2182920746B6500F45A01 /* AppDelegate.m */,
+				7B2240CF20EDF23300E45BDC /* SUTRuntimeMethod.h */,
+				7B2240D020EDF23300E45BDC /* SUTRuntimeMethod.m */,
 				7BA6E8BD20ECA14C006F04D0 /* NSArray+Blog.h */,
 				7BA6E8BE20ECA14C006F04D0 /* NSArray+Blog.m */,
 				7BF2185D2074819900F45A01 /* NavigationBar_image.png */,
@@ -375,6 +380,7 @@
 				7BA6E8BF20ECA14C006F04D0 /* NSArray+Blog.m in Sources */,
 				7BF2182D20746B6500F45A01 /* ViewController.m in Sources */,
 				7BF218642074D59900F45A01 /* WebViewController.m in Sources */,
+				7B2240D120EDF23300E45BDC /* SUTRuntimeMethod.m in Sources */,
 				7BF2185C2074804C00F45A01 /* BaseViewController.m in Sources */,
 				7BF2183820746B6500F45A01 /* main.m in Sources */,
 				7B4A6A4320EA0C9F00FA9963 /* Student.m in Sources */,
