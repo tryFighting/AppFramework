@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "WebViewController.h"
+#import <objc/runtime.h>
 @interface AppDelegate ()
 
 @end
@@ -346,6 +347,74 @@
  多重继承将不同的功能集成到一个对象中,它会让对象变得过大，涉及的东西过多；
  而消息转发将功能分解到独立的小的对象中，并通过某种方式将这些对象链接起来，并做响应的消息转发
  */
+
+/*
+ iOS Runtime 之六：Method Swizzling
+ 一概述
+ OC的method Swizzling是一项异常强大的技术，他可以动态替换方法，实现hook功能，是一种比子类话更加灵活的重写方法的方式
+ 原则上，方法的名称name和方法的实现imp是一一对应的，而method swizzling的原理就是动态改变他们的对应关系，以达到替换方法实现的目的
+ 二 原理
+ 在OCruntime特性中，调用一个对象的方法就是给这个对象发送消息。是通过查找接收对象的方法列表，从方法列表中查找对应的SEL，这个SEL对应着一个IMP,这个SEL对应着一个IMP，可以通过这个IMP找到对应的方法调用
+ 每个类中都有一个Dispatch Table,这个Dispatch Table本质是将类中的SEL和IMP进行对应
+ 
+ 三 method swizzling使用
+ 详见@implementation UIViewController (Swizzle)文件
+ 
+ 四 Method Swizzling的类簇
+ 方法交换对NSArray这些的类簇是不起作用的，因为这些类簇类，其实是一种抽象工厂的设计模式。抽象工厂内部有很多其他继承自当前类的子类，抽象工厂类会根据不同的情况，创建不同的抽象对象来进行使用。例如我们调用NSArray的objectAtIndex：方法，这个类会在方法内部判断，内部创建不同抽象类进行操作。
+ 所以也就是说NSArray类进行操作其实只是对父类进行了操作，在NSArray内部创建其他子类来执行操作，真正执行操作的并不是NSArray自身，所以应该对其真身进行操作
+ 祥见@implementation NSArray (MyArray)
+ 
+ 五.Method Swizzling的注意事项
+ @1 Swizzling应该总是在+load中执行
+ 在OC中，运行时会自动调用每个类的两个方法。+load会在类初始化加载时调用，+initialize会在第一次调用类的类方法或实例方法之前被调用，这两个方法是可选的,且只有实现了它们时才会被调用。由于method swizzling会影响到类的全局状态，因此要避免在并发处理上出现竞争的情况。+load能保证在类的初始化过程中被加载，并保证这种改变应用级别的行为的一致性。相比之下，+initialize在其执行时不提供这种保证一事实上，如果应用没给这个类发送消息，则它可能永远不会被调用
+ 
+ @2 Swizzling应该总是在dispatch_once中执行
+ 与上面相同，因为swizzling会改变全局状态，所以我们需要在运行时采取一些预防措施。原子性就是一种措施，它确保代码只被执行一次，不管有多少线程。GCD的dispatch_once可以确保这种行为，我们应该将其作为method swizzling的最佳实践
+ 
+ @3 Method Swizzling有成熟的第三方框架---jrswizzle
+ */
+/*
+ iOS Runtime之七:拾遗
+ 1.super 如果我们在类的方法调用父类的方法使用super  编译器标识符
+ super的定义：
+ struct objc_super{id receiver;Class superClass};
+ 接下来发送消息时，不是调用objc_msgSend函数，而是调用objc_msgSendSuper函数
+ id objc_msgSendSuper(struct objc_super *super,SEL op,...);
+ 2.库相关的操作
+ 库相关的操作主要是用于获取由系统提供的库相关的信息，主要包含以下函数：
+ 
+ // 获取所有加载的Objective-C框架和动态库的名称
+ const char ** objc_copyImageNames ( unsigned int *outCount );
+ 
+ // 获取指定类所在动态库
+ const char * class_getImageName ( Class cls );
+ 
+ // 获取指定库或框架中所有类的类名
+ const char ** objc_copyClassNamesForImage ( const char *image, unsigned int *outCount );
+ 
+ 3.块操作
+ 我们知道block给我们带到极大的方便，苹果在runtime中也提供了一些函数来支持对block的操作
+ 
+//创建一个指针函数的指针,该函数调用会调用特定的block
+ IMP imp_implemenntationWithBlock(id block);
+ //返回与IMP
+ id imp_getBlock(IMP anImp);
+ //解除block与IMP
+ BOOL imp_removeBlock(IMP anImp);
+ 
+ 4.弱引用操作
+ //加载弱引用指针引用的对象并返回
+ id objc_loadWeak(id *location);
+ 该函数加载一个弱指针引用对象，并在对其retain和autorelease操作后返回它，这样，对象就可以在调用者使用它时保持足够长的生命周期。
+
+ //存储__weak变量的新值
+ id objc_storeWeak(id *location,id obj); 赋值对象
+ 
+ 5.宏定义
+ 在runtime中，还定义了一些宏定义供我们使用，有些值我们会经常用到
+ 布尔值 空值  分发函数原型  OC根类 局部变量存储时长
+ */
 @implementation AppDelegate
 /*
  支付宝应用架构  首次加载网络请求 存储本地 下次进入 不再请求 如若请求直接读取本地记录
@@ -358,6 +427,16 @@
     ViewController * view = [[ViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:view];
     self.window.rootViewController = nav;
+//    NSArray *arr = @[@1,@2,@3];
+//    [arr objectAtIndex:3];
+    NSLog(@"获取指定类所在动态库");
+    NSLog(@"UIView's Framework: %s", class_getImageName(NSClassFromString(@"UIView")));
+    NSLog(@"获取指定库或框架中所有类的类名");
+    unsigned int outCount;
+    const char ** classes = objc_copyClassNamesForImage(class_getImageName(NSClassFromString(@"UIView")), &outCount);
+    for (int i = 0; i < outCount; i++) {
+        NSLog(@"class name: %s", classes[i]);
+    }
     return YES;
 }
 

@@ -12,6 +12,7 @@
 #import "Student.h"
 #import "NSArray+Blog.h"
 #import "SUTRuntimeMethod.h"
+#import "MyRuntimeBlock.h"
 @interface ViewController ()
 {
     NSArray *arr;
@@ -152,6 +153,17 @@ void method1(id self,SEL _cmd,int a){
     
     SUTRuntimeMethod *method = [[SUTRuntimeMethod alloc] init];
     [method test];
+    
+    //测试代码
+    IMP imp = imp_implementationWithBlock(^(id obj,NSString *str){
+        NSLog(@"%@",str);
+    });
+    class_addMethod(MyRuntimeBlock.class, @selector(testBlock), imp, "v@:@");
+    MyRuntimeBlock *runtime = [[MyRuntimeBlock alloc] init];
+    [runtime performSelector:@selector(testBlock) withObject:@"hello world!"];
+}
+- (void)testBlock{
+    
 }
 /*
  测试成员变量
