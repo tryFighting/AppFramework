@@ -33,7 +33,7 @@
  通过__forwarding,无论是在block中还是在block外访问__block变量，也不管该变量是在栈上或椎上，都能顺利访问同一个__block变量
  三 防止block循环引用
  解决方法 ARC 使用__weak MRC使用__block
- typedef void (^Block)();
+ typedef void (^Block)()
  @interface TestObj : NSObject
  {
  Block _attributBlock;
@@ -59,7 +59,9 @@
  id obj = [[TestObj alloc] init];
  [obj execBlock]; // 如果不调用此方法，tmp 永远不会置 nil，内存泄露会一直在
  
- 四.
+ 四.Block的copy操作
+ @1 Block的存储域及copy操作
+ 栈----椎-----.data区（数据区域）.text区(程序区域)
  */
 typedef void(^MyBlock)(void);
 typedef int(^blk_t)(int);
