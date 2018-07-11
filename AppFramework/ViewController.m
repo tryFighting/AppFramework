@@ -13,6 +13,11 @@
 #import "NSArray+Blog.h"
 #import "SUTRuntimeMethod.h"
 #import "MyRuntimeBlock.h"
+#import <CoreFoundation/CoreFoundation.h>
+//CFRunLoopRef源码
+//全局的字典，key是pthread_t,value是CFRunloopRef
+static CFMutableDictionaryRef loopsDic;
+/// 访问 loopsDic 时的锁
 @interface ViewController ()
 {
     NSArray *arr;
@@ -22,6 +27,7 @@
 @end
 
 @implementation ViewController
+
 //上面为类添加了成员变量，也可以结合属性操作方法为类添加属性
 - (void)addClassTest{
     Class myClass = objc_allocateClassPair([NSObject class], "myclass", 0);
@@ -45,6 +51,7 @@
     [self categoryTest];
     
 }
+
 - (void)categoryTest{
     NSArray *myArray = [[NSArray alloc] init];
     myArray.blog = @"xxx";
