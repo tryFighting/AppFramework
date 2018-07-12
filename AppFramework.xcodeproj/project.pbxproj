@@ -14,6 +14,7 @@
 		7BA0A5C420EF052B008D4370 /* NSArray+MyArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C320EF052B008D4370 /* NSArray+MyArray.m */; };
 		7BA0A5C720EF44F2008D4370 /* MyRuntimeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C620EF44F2008D4370 /* MyRuntimeBlock.m */; };
 		7BA0F36720F6ECC9004D6987 /* FMDBDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0F36620F6ECC9004D6987 /* FMDBDemo.m */; };
+		7BA0F36B20F72902004D6987 /* NotificationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0F36A20F72902004D6987 /* NotificationDemo.m */; };
 		7BA6E8BF20ECA14C006F04D0 /* NSArray+Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6E8BE20ECA14C006F04D0 /* NSArray+Blog.m */; };
 		7BF2182A20746B6500F45A01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2182920746B6500F45A01 /* AppDelegate.m */; };
 		7BF2182D20746B6500F45A01 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2182C20746B6500F45A01 /* ViewController.m */; };
@@ -60,6 +61,8 @@
 		7BA0A5C620EF44F2008D4370 /* MyRuntimeBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRuntimeBlock.m; sourceTree = "<group>"; };
 		7BA0F36520F6ECC9004D6987 /* FMDBDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBDemo.h; sourceTree = "<group>"; };
 		7BA0F36620F6ECC9004D6987 /* FMDBDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDBDemo.m; sourceTree = "<group>"; };
+		7BA0F36920F72902004D6987 /* NotificationDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationDemo.h; sourceTree = "<group>"; };
+		7BA0F36A20F72902004D6987 /* NotificationDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationDemo.m; sourceTree = "<group>"; };
 		7BA6E8BD20ECA14C006F04D0 /* NSArray+Blog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Blog.h"; sourceTree = "<group>"; };
 		7BA6E8BE20ECA14C006F04D0 /* NSArray+Blog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Blog.m"; sourceTree = "<group>"; };
 		7BF2182520746B6500F45A01 /* AppFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +135,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7BA0F36820F728D7004D6987 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				7BA0F36920F72902004D6987 /* NotificationDemo.h */,
+				7BA0F36A20F72902004D6987 /* NotificationDemo.m */,
+				7B4A6A4120EA0C9F00FA9963 /* Student.h */,
+				7B4A6A4220EA0C9F00FA9963 /* Student.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		7BF2181C20746B6500F45A01 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +173,7 @@
 			children = (
 				7BF2182820746B6500F45A01 /* AppDelegate.h */,
 				7BF2182920746B6500F45A01 /* AppDelegate.m */,
+				7BA0F36820F728D7004D6987 /* Notification */,
 				7BA0F36520F6ECC9004D6987 /* FMDBDemo.h */,
 				7BA0F36620F6ECC9004D6987 /* FMDBDemo.m */,
 				7BA0A5C520EF44F2008D4370 /* MyRuntimeBlock.h */,
@@ -178,8 +193,6 @@
 				7BF218602074CADB00F45A01 /* BaseWebViewController.m */,
 				7BF2182B20746B6500F45A01 /* ViewController.h */,
 				7BF2182C20746B6500F45A01 /* ViewController.m */,
-				7B4A6A4120EA0C9F00FA9963 /* Student.h */,
-				7B4A6A4220EA0C9F00FA9963 /* Student.m */,
 				7BF218622074D59900F45A01 /* WebViewController.h */,
 				7BF218632074D59900F45A01 /* WebViewController.m */,
 				7BF2182E20746B6500F45A01 /* Main.storyboard */,
@@ -404,6 +417,7 @@
 				7BF218642074D59900F45A01 /* WebViewController.m in Sources */,
 				7B2240D120EDF23300E45BDC /* SUTRuntimeMethod.m in Sources */,
 				7BF2185C2074804C00F45A01 /* BaseViewController.m in Sources */,
+				7BA0F36B20F72902004D6987 /* NotificationDemo.m in Sources */,
 				7BA0A5C120EEFDBD008D4370 /* UIViewController+Swizzle.m in Sources */,
 				7BF2183820746B6500F45A01 /* main.m in Sources */,
 				7BA0A5C420EF052B008D4370 /* NSArray+MyArray.m in Sources */,

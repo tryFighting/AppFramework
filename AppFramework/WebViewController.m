@@ -7,7 +7,8 @@
 //
 
 #import "WebViewController.h"
-
+#import "NotificationDemo.h"
+#import "Student.h"
 @interface WebViewController ()
 
 @end
@@ -29,6 +30,30 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //初始化
+    Student *s1 = [[Student alloc] init];
+    s1.name = @"Jack";
+    
+    Student *s12 = [[Student alloc] init];
+    s12.name = @"Lucky";
+    
+    NotificationDemo *d1 = [[NotificationDemo alloc] init];
+    d1.name = @"通知1";
+    
+    NotificationDemo *d2 = [[NotificationDemo alloc] init];
+    d2.name = @"通知2";
+    
+    NotificationDemo *d3 = [[NotificationDemo alloc] init];
+    d3.name = @"通知3";
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:d1 selector:@selector(newsCome:) name:@"ss" object:nil];
+    [center addObserver:d1 selector:@selector(newsCome:) name:@"tt" object:nil];
+     [center addObserver:d2 selector:@selector(newsCome:) name:nil object:s1];
+    [center addObserver:d3 selector:@selector(newsCome:) name:nil object:nil];
+    //发布
+    [center postNotificationName:@"ss" object:s1 userInfo:@{@"title":@"111"}];
+    [center postNotificationName:@"tt" object:s12 userInfo:@{@"title":@"222"}];
     NSLog(@"xxxxxxxxxxxxxxxx哈哈😆");
 }
 - (void)didReceiveMemoryWarning {
