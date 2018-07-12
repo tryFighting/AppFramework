@@ -13,6 +13,7 @@
 		7BA0A5C120EEFDBD008D4370 /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C020EEFDBD008D4370 /* UIViewController+Swizzle.m */; };
 		7BA0A5C420EF052B008D4370 /* NSArray+MyArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C320EF052B008D4370 /* NSArray+MyArray.m */; };
 		7BA0A5C720EF44F2008D4370 /* MyRuntimeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C620EF44F2008D4370 /* MyRuntimeBlock.m */; };
+		7BA0F36720F6ECC9004D6987 /* FMDBDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0F36620F6ECC9004D6987 /* FMDBDemo.m */; };
 		7BA6E8BF20ECA14C006F04D0 /* NSArray+Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6E8BE20ECA14C006F04D0 /* NSArray+Blog.m */; };
 		7BF2182A20746B6500F45A01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2182920746B6500F45A01 /* AppDelegate.m */; };
 		7BF2182D20746B6500F45A01 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2182C20746B6500F45A01 /* ViewController.m */; };
@@ -57,6 +58,8 @@
 		7BA0A5C320EF052B008D4370 /* NSArray+MyArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MyArray.m"; sourceTree = "<group>"; };
 		7BA0A5C520EF44F2008D4370 /* MyRuntimeBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRuntimeBlock.h; sourceTree = "<group>"; };
 		7BA0A5C620EF44F2008D4370 /* MyRuntimeBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRuntimeBlock.m; sourceTree = "<group>"; };
+		7BA0F36520F6ECC9004D6987 /* FMDBDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBDemo.h; sourceTree = "<group>"; };
+		7BA0F36620F6ECC9004D6987 /* FMDBDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDBDemo.m; sourceTree = "<group>"; };
 		7BA6E8BD20ECA14C006F04D0 /* NSArray+Blog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Blog.h"; sourceTree = "<group>"; };
 		7BA6E8BE20ECA14C006F04D0 /* NSArray+Blog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Blog.m"; sourceTree = "<group>"; };
 		7BF2182520746B6500F45A01 /* AppFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +159,8 @@
 			children = (
 				7BF2182820746B6500F45A01 /* AppDelegate.h */,
 				7BF2182920746B6500F45A01 /* AppDelegate.m */,
+				7BA0F36520F6ECC9004D6987 /* FMDBDemo.h */,
+				7BA0F36620F6ECC9004D6987 /* FMDBDemo.m */,
 				7BA0A5C520EF44F2008D4370 /* MyRuntimeBlock.h */,
 				7BA0A5C620EF44F2008D4370 /* MyRuntimeBlock.m */,
 				7BA0A5BF20EEFDBD008D4370 /* UIViewController+Swizzle.h */,
@@ -393,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BA0A5C720EF44F2008D4370 /* MyRuntimeBlock.m in Sources */,
+				7BA0F36720F6ECC9004D6987 /* FMDBDemo.m in Sources */,
 				7BA6E8BF20ECA14C006F04D0 /* NSArray+Blog.m in Sources */,
 				7BF2182D20746B6500F45A01 /* ViewController.m in Sources */,
 				7BF218642074D59900F45A01 /* WebViewController.m in Sources */,
