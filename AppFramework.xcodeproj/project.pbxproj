@@ -16,6 +16,7 @@
 		7BA0F36720F6ECC9004D6987 /* FMDBDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0F36620F6ECC9004D6987 /* FMDBDemo.m */; };
 		7BA0F36B20F72902004D6987 /* NotificationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0F36A20F72902004D6987 /* NotificationDemo.m */; };
 		7BA6E8BF20ECA14C006F04D0 /* NSArray+Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6E8BE20ECA14C006F04D0 /* NSArray+Blog.m */; };
+		7BC6CF9420FC8AFD00E09F3C /* ThreadDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6CF9320FC8AFD00E09F3C /* ThreadDemo.m */; };
 		7BF2182A20746B6500F45A01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2182920746B6500F45A01 /* AppDelegate.m */; };
 		7BF2182D20746B6500F45A01 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2182C20746B6500F45A01 /* ViewController.m */; };
 		7BF2183020746B6500F45A01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF2182E20746B6500F45A01 /* Main.storyboard */; };
@@ -65,6 +66,10 @@
 		7BA0F36A20F72902004D6987 /* NotificationDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationDemo.m; sourceTree = "<group>"; };
 		7BA6E8BD20ECA14C006F04D0 /* NSArray+Blog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Blog.h"; sourceTree = "<group>"; };
 		7BA6E8BE20ECA14C006F04D0 /* NSArray+Blog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Blog.m"; sourceTree = "<group>"; };
+		7BC6CF8F20FC42CA00E09F3C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7BC6CF9020FC7CFE00E09F3C /* 多线程.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "多线程.md"; sourceTree = "<group>"; };
+		7BC6CF9220FC8AFD00E09F3C /* ThreadDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadDemo.h; sourceTree = "<group>"; };
+		7BC6CF9320FC8AFD00E09F3C /* ThreadDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadDemo.m; sourceTree = "<group>"; };
 		7BF2182520746B6500F45A01 /* AppFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF2182820746B6500F45A01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7BF2182920746B6500F45A01 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -146,6 +151,16 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		7BC6CF9120FC8AE300E09F3C /* Thread_线程 */ = {
+			isa = PBXGroup;
+			children = (
+				7BC6CF9020FC7CFE00E09F3C /* 多线程.md */,
+				7BC6CF9220FC8AFD00E09F3C /* ThreadDemo.h */,
+				7BC6CF9320FC8AFD00E09F3C /* ThreadDemo.m */,
+			);
+			path = "Thread_线程";
+			sourceTree = "<group>";
+		};
 		7BF2181C20746B6500F45A01 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +188,8 @@
 			children = (
 				7BF2182820746B6500F45A01 /* AppDelegate.h */,
 				7BF2182920746B6500F45A01 /* AppDelegate.m */,
+				7BC6CF8F20FC42CA00E09F3C /* README.md */,
+				7BC6CF9120FC8AE300E09F3C /* Thread_线程 */,
 				7BA0F36820F728D7004D6987 /* Notification */,
 				7BA0F36520F6ECC9004D6987 /* FMDBDemo.h */,
 				7BA0F36620F6ECC9004D6987 /* FMDBDemo.m */,
@@ -421,6 +438,7 @@
 				7BA0A5C120EEFDBD008D4370 /* UIViewController+Swizzle.m in Sources */,
 				7BF2183820746B6500F45A01 /* main.m in Sources */,
 				7BA0A5C420EF052B008D4370 /* NSArray+MyArray.m in Sources */,
+				7BC6CF9420FC8AFD00E09F3C /* ThreadDemo.m in Sources */,
 				7B4A6A4320EA0C9F00FA9963 /* Student.m in Sources */,
 				7BF218612074CADB00F45A01 /* BaseWebViewController.m in Sources */,
 				7BF2182A20746B6500F45A01 /* AppDelegate.m in Sources */,

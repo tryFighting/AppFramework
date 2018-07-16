@@ -9,6 +9,7 @@
 #import "WebViewController.h"
 #import "NotificationDemo.h"
 #import "Student.h"
+#import "ThreadDemo.h"
 @interface WebViewController ()
 
 @end
@@ -55,6 +56,8 @@
     [center postNotificationName:@"ss" object:s1 userInfo:@{@"title":@"111"}];
     [center postNotificationName:@"tt" object:s12 userInfo:@{@"title":@"222"}];
     NSLog(@"xxxxxxxxxxxxxxxx哈哈😆");
+    
+   ThreadDemo *demo = [ThreadDemo new];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
