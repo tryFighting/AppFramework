@@ -10,6 +10,7 @@
 		657E932D33FCA26408A5F4FA /* libPods-AppFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB5CE23D48366AEDA4F4C8 /* libPods-AppFramework.a */; };
 		7B2240D120EDF23300E45BDC /* SUTRuntimeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2240D020EDF23300E45BDC /* SUTRuntimeMethod.m */; };
 		7B4A6A4320EA0C9F00FA9963 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A6A4220EA0C9F00FA9963 /* Student.m */; };
+		7B628D0920FDE6B1001E8C6D /* CAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B628D0820FDE6B1001E8C6D /* CAView.m */; };
 		7BA0A5C120EEFDBD008D4370 /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C020EEFDBD008D4370 /* UIViewController+Swizzle.m */; };
 		7BA0A5C420EF052B008D4370 /* NSArray+MyArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C320EF052B008D4370 /* NSArray+MyArray.m */; };
 		7BA0A5C720EF44F2008D4370 /* MyRuntimeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C620EF44F2008D4370 /* MyRuntimeBlock.m */; };
@@ -54,6 +55,10 @@
 		7B2240D020EDF23300E45BDC /* SUTRuntimeMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SUTRuntimeMethod.m; sourceTree = "<group>"; };
 		7B4A6A4120EA0C9F00FA9963 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7B4A6A4220EA0C9F00FA9963 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		7B628D0620FDDFB5001E8C6D /* CoreAnimation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CoreAnimation.md; sourceTree = "<group>"; };
+		7B628D0720FDE6B1001E8C6D /* CAView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAView.h; sourceTree = "<group>"; };
+		7B628D0820FDE6B1001E8C6D /* CAView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAView.m; sourceTree = "<group>"; };
+		7B628D0A20FDE7E7001E8C6D /* AppFramework.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppFramework.pch; sourceTree = "<group>"; };
 		7BA0A5BF20EEFDBD008D4370 /* UIViewController+Swizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzle.h"; sourceTree = "<group>"; };
 		7BA0A5C020EEFDBD008D4370 /* UIViewController+Swizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzle.m"; sourceTree = "<group>"; };
 		7BA0A5C220EF052B008D4370 /* NSArray+MyArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+MyArray.h"; sourceTree = "<group>"; };
@@ -140,6 +145,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7B628D0520FDDF81001E8C6D /* CoreAnimation_动画 */ = {
+			isa = PBXGroup;
+			children = (
+				7B628D0620FDDFB5001E8C6D /* CoreAnimation.md */,
+				7B628D0720FDE6B1001E8C6D /* CAView.h */,
+				7B628D0820FDE6B1001E8C6D /* CAView.m */,
+			);
+			path = "CoreAnimation_动画";
+			sourceTree = "<group>";
+		};
 		7BA0F36820F728D7004D6987 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +204,7 @@
 				7BF2182820746B6500F45A01 /* AppDelegate.h */,
 				7BF2182920746B6500F45A01 /* AppDelegate.m */,
 				7BC6CF8F20FC42CA00E09F3C /* README.md */,
+				7B628D0520FDDF81001E8C6D /* CoreAnimation_动画 */,
 				7BC6CF9120FC8AE300E09F3C /* Thread_线程 */,
 				7BA0F36820F728D7004D6987 /* Notification */,
 				7BA0F36520F6ECC9004D6987 /* FMDBDemo.h */,
@@ -217,6 +233,7 @@
 				7BF2183320746B6500F45A01 /* LaunchScreen.storyboard */,
 				7BF2183620746B6500F45A01 /* Info.plist */,
 				7BF2183720746B6500F45A01 /* main.m */,
+				7B628D0A20FDE7E7001E8C6D /* AppFramework.pch */,
 			);
 			path = AppFramework;
 			sourceTree = "<group>";
@@ -429,6 +446,7 @@
 			files = (
 				7BA0A5C720EF44F2008D4370 /* MyRuntimeBlock.m in Sources */,
 				7BA0F36720F6ECC9004D6987 /* FMDBDemo.m in Sources */,
+				7B628D0920FDE6B1001E8C6D /* CAView.m in Sources */,
 				7BA6E8BF20ECA14C006F04D0 /* NSArray+Blog.m in Sources */,
 				7BF2182D20746B6500F45A01 /* ViewController.m in Sources */,
 				7BF218642074D59900F45A01 /* WebViewController.m in Sources */,
@@ -607,6 +625,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98298VBF9J;
+				GCC_PREFIX_HEADER = /Users/zrq/Documents/GitHub/AppFramework/AppFramework/AppFramework.pch;
 				INFOPLIST_FILE = AppFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = md.AppFramework;
@@ -622,6 +641,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98298VBF9J;
+				GCC_PREFIX_HEADER = /Users/zrq/Documents/GitHub/AppFramework/AppFramework/AppFramework.pch;
 				INFOPLIST_FILE = AppFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = md.AppFramework;

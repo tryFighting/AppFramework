@@ -1,0 +1,14 @@
+//
+//  AppFramework.pch
+//  AppFramework
+//
+//  Created by zrq on 2018/7/17.
+//  Copyright © 2018年 zrq. All rights reserved.
+//
+
+#ifndef AppFramework_pch
+#define AppFramework_pch
+
+#define  SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define   SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#endif /* AppFramework_pch */
