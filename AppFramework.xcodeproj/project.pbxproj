@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		657E932D33FCA26408A5F4FA /* libPods-AppFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB5CE23D48366AEDA4F4C8 /* libPods-AppFramework.a */; };
+		7B00C284210F00A5005153EE /* AdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B00C283210F00A5005153EE /* AdvertiseView.m */; };
+		7B00C287210F0A73005153EE /* AdvertiseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B00C286210F0A73005153EE /* AdvertiseHelper.m */; };
 		7B2240D120EDF23300E45BDC /* SUTRuntimeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2240D020EDF23300E45BDC /* SUTRuntimeMethod.m */; };
 		7B4A6A4320EA0C9F00FA9963 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A6A4220EA0C9F00FA9963 /* Student.m */; };
 		7B628D0920FDE6B1001E8C6D /* CAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B628D0820FDE6B1001E8C6D /* CAView.m */; };
@@ -51,6 +53,10 @@
 
 /* Begin PBXFileReference section */
 		51BB5CE23D48366AEDA4F4C8 /* libPods-AppFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppFramework.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B00C282210F00A5005153EE /* AdvertiseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvertiseView.h; sourceTree = "<group>"; };
+		7B00C283210F00A5005153EE /* AdvertiseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvertiseView.m; sourceTree = "<group>"; };
+		7B00C285210F0A73005153EE /* AdvertiseHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvertiseHelper.h; sourceTree = "<group>"; };
+		7B00C286210F0A73005153EE /* AdvertiseHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvertiseHelper.m; sourceTree = "<group>"; };
 		7B2240CF20EDF23300E45BDC /* SUTRuntimeMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SUTRuntimeMethod.h; sourceTree = "<group>"; };
 		7B2240D020EDF23300E45BDC /* SUTRuntimeMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SUTRuntimeMethod.m; sourceTree = "<group>"; };
 		7B4A6A4120EA0C9F00FA9963 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -59,6 +65,8 @@
 		7B628D0720FDE6B1001E8C6D /* CAView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAView.h; sourceTree = "<group>"; };
 		7B628D0820FDE6B1001E8C6D /* CAView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAView.m; sourceTree = "<group>"; };
 		7B628D0A20FDE7E7001E8C6D /* AppFramework.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppFramework.pch; sourceTree = "<group>"; };
+		7B8198D1211198EE00F85F84 /* KVO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = KVO.md; sourceTree = "<group>"; };
+		7B8198D221119BDB00F85F84 /* UITableView_优化.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "UITableView_优化.md"; sourceTree = "<group>"; };
 		7BA0A5BF20EEFDBD008D4370 /* UIViewController+Swizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzle.h"; sourceTree = "<group>"; };
 		7BA0A5C020EEFDBD008D4370 /* UIViewController+Swizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzle.m"; sourceTree = "<group>"; };
 		7BA0A5C220EF052B008D4370 /* NSArray+MyArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+MyArray.h"; sourceTree = "<group>"; };
@@ -145,6 +153,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7B00C281210F0044005153EE /* Ads_广告页 */ = {
+			isa = PBXGroup;
+			children = (
+				7B00C282210F00A5005153EE /* AdvertiseView.h */,
+				7B00C283210F00A5005153EE /* AdvertiseView.m */,
+				7B00C285210F0A73005153EE /* AdvertiseHelper.h */,
+				7B00C286210F0A73005153EE /* AdvertiseHelper.m */,
+			);
+			path = "Ads_广告页";
+			sourceTree = "<group>";
+		};
 		7B628D0520FDDF81001E8C6D /* CoreAnimation_动画 */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +222,10 @@
 			children = (
 				7BF2182820746B6500F45A01 /* AppDelegate.h */,
 				7BF2182920746B6500F45A01 /* AppDelegate.m */,
+				7B8198D1211198EE00F85F84 /* KVO.md */,
+				7B8198D221119BDB00F85F84 /* UITableView_优化.md */,
 				7BC6CF8F20FC42CA00E09F3C /* README.md */,
+				7B00C281210F0044005153EE /* Ads_广告页 */,
 				7B628D0520FDDF81001E8C6D /* CoreAnimation_动画 */,
 				7BC6CF9120FC8AE300E09F3C /* Thread_线程 */,
 				7BA0F36820F728D7004D6987 /* Notification */,
@@ -456,8 +478,10 @@
 				7BA0A5C120EEFDBD008D4370 /* UIViewController+Swizzle.m in Sources */,
 				7BF2183820746B6500F45A01 /* main.m in Sources */,
 				7BA0A5C420EF052B008D4370 /* NSArray+MyArray.m in Sources */,
+				7B00C284210F00A5005153EE /* AdvertiseView.m in Sources */,
 				7BC6CF9420FC8AFD00E09F3C /* ThreadDemo.m in Sources */,
 				7B4A6A4320EA0C9F00FA9963 /* Student.m in Sources */,
+				7B00C287210F0A73005153EE /* AdvertiseHelper.m in Sources */,
 				7BF218612074CADB00F45A01 /* BaseWebViewController.m in Sources */,
 				7BF2182A20746B6500F45A01 /* AppDelegate.m in Sources */,
 			);

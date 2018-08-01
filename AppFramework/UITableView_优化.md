@@ -1,0 +1,41 @@
+#  UITableViewCell的优化
+1.cell复用
+cellForRowAtIndexPath：中为每一个cell绑定数据，实际上在调用cellForRowAtindexPath的时候cell还没有被显示
+出来，为了提高效率我们应该吧数据绑定的操作放在cell显示出来后再执行，可以在tableview:willDisplayCell：forRowAtIndexPath：方法中绑定数据
+注意willDisplayCell在cell在tableview展示之前就会调用，此时cell实例已经生成，所以不能更改cell的结构，只能是
+改动cell上的UI的一些属性
+
+2.cell高度的计算
+
+我们分为两种cell,一种是定高的cell,另外一种是动态高度的cell
+A.定高的:self.tableView.rowHeight=88;不需要实现tableView:heightForRowAtIndecpath以节省不必要的计算和开销
+
+B.动态高度的cell
+我们需要实现它的代理，来给出高度
+这个高度代理方法实现后，rowHeight属性会设置无效
+a.iOS8以后 使用Autolayout进行UI布局约束
+b.指定TableView的estimatedRowHeight的属性的默认值
+c.指定TableView的rowHeight属性为UITableViewAutomaticDimension
+除了提高cell高度的计算效率之外，对于已经计算出的高度，我们需要进行缓存，对于已经计算过的高度
+没有必要计算第二次
+C.渲染
+提高cell的渲染速度
+a.当有图像时，预渲染图像时，在bitmap context先将其画一遍，导出UIImage,然后再绘制屏幕，这会大大提高渲染速度。
+b.渲染最耗时的是混合，所以不要使用透明背景，将cell.opaque=yes,背景色不要使用clear，阴影，渐变
+c.混合操作是GPU操作的，我们可以用CPU来渲染
+D.减少视图的数目
+我们再cell上添加系统控件时，实际上系统都会调用底层的接口去绘制，大量添加控件，会消耗很大的资源，并且也会影响渲染的性能，cell在contentView上面添加控件时会相当消耗性能,所以目前最佳的方法还是继承UITableViewCell，并重写drawRect方法
+E.减少多余的绘制操作
+在实现drawRect方法的时候，它的参数rect就是我们需要绘制的区域，在rect范围之外的区域我们不需要绘制，
+否则会消耗相当大的资源
+F.在初始化cell的时候就将所有需要展示的添加完毕，然后根据需要来设置hide属性显示和隐藏
+G.异步化UI，不要阻塞主线程
+对于网络数据的请求或者图片的加载，我们可以开启多线程，将耗时操作放到子线程中进行，异步化操作。
+H.滑动时按需加载对应的内容
+如果目标行与当前列相差超过指定行数，只是在目标滚动范围的前后指定3行加载
+
+
+
+
+
+

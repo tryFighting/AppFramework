@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "WebViewController.h"
 #import <objc/runtime.h>
+#import "AdvertiseHelper.h"
 @interface AppDelegate ()
 
 @end
@@ -420,22 +421,41 @@
  支付宝应用架构  首次加载网络请求 存储本地 下次进入 不再请求 如若请求直接读取本地记录
  如有变更  则就需要在做强制版本更新
  */
+#pragma mark - getter
+- (UIWindow *)window
+{
+if(!_window)
+{
+_window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+_window.backgroundColor = [UIColor redColor];
+[_window makeKeyAndVisible];
+}
+return _window;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //WebViewController
-    ViewController * view = [[ViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:view];
-    self.window.rootViewController = nav;
+    
+     [self.window makeKeyAndVisible];
+    NSArray <NSString *> *imagesURLS = @[@"http://img.zcool.cn/community/016d5b59e1311aa80121ae0cf71916.jpg@2o.jpg", @"http://img.zcool.cn/community/016d5b59e1311aa80121ae0cf71916.jpg@2o.jpg"];
+    // 启动广告
+    [AdvertiseHelper showAdvertiserView:imagesURLS];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        ViewController * view = [[ViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:view];
+        self.window.rootViewController = nav;
+    });
+   
 //    NSArray *arr = @[@1,@2,@3];
 //    [arr objectAtIndex:3];
-    NSLog(@"获取指定类所在动态库");
-    NSLog(@"UIView's Framework: %s", class_getImageName(NSClassFromString(@"UIView")));
-    NSLog(@"获取指定库或框架中所有类的类名");
-    unsigned int outCount;
-    const char ** classes = objc_copyClassNamesForImage(class_getImageName(NSClassFromString(@"UIView")), &outCount);
-    for (int i = 0; i < outCount; i++) {
-        NSLog(@"class name: %s", classes[i]);
-    }
+//    NSLog(@"获取指定类所在动态库");
+//    NSLog(@"UIView's Framework: %s", class_getImageName(NSClassFromString(@"UIView")));
+//    NSLog(@"获取指定库或框架中所有类的类名");
+//    unsigned int outCount;
+//    const char ** classes = objc_copyClassNamesForImage(class_getImageName(NSClassFromString(@"UIView")), &outCount);
+//    for (int i = 0; i < outCount; i++) {
+//        NSLog(@"class name: %s", classes[i]);
+//    }
     return YES;
 }
 

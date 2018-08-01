@@ -156,7 +156,7 @@ void method1(id self,SEL _cmd,int a){
     
     [self testVersion];
     
-    [self addClassTest];
+    //[self addClassTest];
     
     SUTRuntimeMethod *method = [[SUTRuntimeMethod alloc] init];
     [method test];

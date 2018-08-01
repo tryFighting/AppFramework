@@ -11,10 +11,19 @@
 #import "Student.h"
 #import "ThreadDemo.h"
 @interface WebViewController ()
-
+@property(nonatomic,strong)CALayer *myLayer;
 @end
 
 @implementation WebViewController
+- (CALayer *)myLayer{
+    if (_myLayer == nil) {
+        _myLayer = [CALayer layer];
+        _myLayer.frame = CGRectMake(50, 100, 190, 145);
+        _myLayer.backgroundColor = [UIColor greenColor].CGColor;
+        self.myLayer = _myLayer;
+    }
+    return _myLayer;
+}
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSTimer *timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(show) userInfo:nil repeats:YES];
     //加入到runloop中才可以运行
@@ -31,6 +40,24 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /*
+     CALayer的使用
+     */
+    [self.view.layer addSublayer:self.myLayer];
+    //设置图层的内容
+    self.myLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"NavigationBar_image"].CGImage);
+    //设置阴影颜色
+    self.myLayer.shadowColor = [UIColor redColor].CGColor;
+    //// 设置阴影的不透明度
+    self.myLayer.shadowOpacity = 0.6;
+    // 设置边角半径
+    self.myLayer.cornerRadius = 15;
+    // 设置裁剪
+    self.myLayer.masksToBounds = YES;
+    // 设置边框线的颜色
+    self.myLayer.borderColor = [UIColor greenColor].CGColor;
+    // 设置边框线条的宽度
+    self.myLayer.borderWidth = 5.0;
     //初始化
     Student *s1 = [[Student alloc] init];
     s1.name = @"Jack";

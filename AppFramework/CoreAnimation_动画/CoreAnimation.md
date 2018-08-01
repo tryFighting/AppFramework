@@ -1,3 +1,13 @@
+#CALayer
+@property(nonatomic,readonly,retain)CALayer *layer;
+UIView本身不具备显示的功能，是它内部的图层有显示功能
+通过操作CALayer对象，可以方便地调整UIView的一些外观属性，给图层添加动画
+
+UIView和CALayer区别：
+1.UIView是用来显示内容的，可以处理用户事件。直接继承UIResponser
+2.CALayer是用来绘制内容的，不能处理用户事件，直接继承NSObject
+3.UIView和CALayer是相互依赖的关系，UIView依赖于CALayer提供的内容，CALayer依赖于UIView提供的容器来显示绘制的内容
+
 #  Core Animation详解
 一概述：
 CA：核心动画，它是一组非常强大的动画处理API,使用它能做出非常绚丽的动画
