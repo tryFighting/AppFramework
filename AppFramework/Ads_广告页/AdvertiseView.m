@@ -43,6 +43,10 @@ static const NSUInteger showtime = 5;
     }
     return self;
 }
+- (void)setFilePath:(NSString *)filePath{
+    _filePath = filePath;
+    _adView.image = [YYImage imageWithContentsOfFile:filePath];
+}
 - (void)show{
     //倒计时GCD
     [self startCountdown];

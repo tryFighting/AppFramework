@@ -12,6 +12,7 @@
 		7B00C287210F0A73005153EE /* AdvertiseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B00C286210F0A73005153EE /* AdvertiseHelper.m */; };
 		7B2240D120EDF23300E45BDC /* SUTRuntimeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2240D020EDF23300E45BDC /* SUTRuntimeMethod.m */; };
 		7B4A6A4320EA0C9F00FA9963 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A6A4220EA0C9F00FA9963 /* Student.m */; };
+		7B5510C0211836AF0018F2B3 /* 加密解密.md in Resources */ = {isa = PBXBuildFile; fileRef = 7B5510BF211836AF0018F2B3 /* 加密解密.md */; };
 		7B628D0920FDE6B1001E8C6D /* CAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B628D0820FDE6B1001E8C6D /* CAView.m */; };
 		7BA0A5C120EEFDBD008D4370 /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C020EEFDBD008D4370 /* UIViewController+Swizzle.m */; };
 		7BA0A5C420EF052B008D4370 /* NSArray+MyArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C320EF052B008D4370 /* NSArray+MyArray.m */; };
@@ -61,6 +62,7 @@
 		7B2240D020EDF23300E45BDC /* SUTRuntimeMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SUTRuntimeMethod.m; sourceTree = "<group>"; };
 		7B4A6A4120EA0C9F00FA9963 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7B4A6A4220EA0C9F00FA9963 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		7B5510BF211836AF0018F2B3 /* 加密解密.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "加密解密.md"; sourceTree = "<group>"; };
 		7B628D0620FDDFB5001E8C6D /* CoreAnimation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CoreAnimation.md; sourceTree = "<group>"; };
 		7B628D0720FDE6B1001E8C6D /* CAView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAView.h; sourceTree = "<group>"; };
 		7B628D0820FDE6B1001E8C6D /* CAView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAView.m; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				7B8198D1211198EE00F85F84 /* KVO.md */,
 				7B8198D221119BDB00F85F84 /* UITableView_优化.md */,
 				7BC6CF8F20FC42CA00E09F3C /* README.md */,
+				7B5510BF211836AF0018F2B3 /* 加密解密.md */,
 				7B00C281210F0044005153EE /* Ads_广告页 */,
 				7B628D0520FDDF81001E8C6D /* CoreAnimation_动画 */,
 				7BC6CF9120FC8AE300E09F3C /* Thread_线程 */,
@@ -387,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B5510C0211836AF0018F2B3 /* 加密解密.md in Resources */,
 				7BF2185E2074819900F45A01 /* NavigationBar_image.png in Resources */,
 				7BF2183520746B6500F45A01 /* LaunchScreen.storyboard in Resources */,
 				7BF2183220746B6500F45A01 /* Assets.xcassets in Resources */,
