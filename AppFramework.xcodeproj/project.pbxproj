@@ -13,7 +13,12 @@
 		7B2240D120EDF23300E45BDC /* SUTRuntimeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2240D020EDF23300E45BDC /* SUTRuntimeMethod.m */; };
 		7B4A6A4320EA0C9F00FA9963 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A6A4220EA0C9F00FA9963 /* Student.m */; };
 		7B5510C0211836AF0018F2B3 /* 加密解密.md in Resources */ = {isa = PBXBuildFile; fileRef = 7B5510BF211836AF0018F2B3 /* 加密解密.md */; };
+		7B567AD6211BDE2700654614 /* XM.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B567AD4211BDE2700654614 /* XM.m */; };
+		7B5AC9A221197E05006ADC15 /* 组件化架构.md in Resources */ = {isa = PBXBuildFile; fileRef = 7B5AC9A121197E05006ADC15 /* 组件化架构.md */; };
+		7B5AC9A521197E99006ADC15 /* LDBusMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5AC9A421197E99006ADC15 /* LDBusMediator.m */; };
+		7B5AC9A9211983BE006ADC15 /* LDBusNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5AC9A8211983BE006ADC15 /* LDBusNavigator.m */; };
 		7B628D0920FDE6B1001E8C6D /* CAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B628D0820FDE6B1001E8C6D /* CAView.m */; };
+		7B738ECD2123CFC400D8B684 /* 算法.md in Resources */ = {isa = PBXBuildFile; fileRef = 7B738ECC2123CFC400D8B684 /* 算法.md */; };
 		7BA0A5C120EEFDBD008D4370 /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C020EEFDBD008D4370 /* UIViewController+Swizzle.m */; };
 		7BA0A5C420EF052B008D4370 /* NSArray+MyArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C320EF052B008D4370 /* NSArray+MyArray.m */; };
 		7BA0A5C720EF44F2008D4370 /* MyRuntimeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0A5C620EF44F2008D4370 /* MyRuntimeBlock.m */; };
@@ -63,10 +68,19 @@
 		7B4A6A4120EA0C9F00FA9963 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7B4A6A4220EA0C9F00FA9963 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		7B5510BF211836AF0018F2B3 /* 加密解密.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "加密解密.md"; sourceTree = "<group>"; };
+		7B567AD4211BDE2700654614 /* XM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XM.m; sourceTree = "<group>"; };
+		7B567AD5211BDE2700654614 /* XM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XM.h; sourceTree = "<group>"; };
+		7B5AC9A121197E05006ADC15 /* 组件化架构.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "组件化架构.md"; sourceTree = "<group>"; };
+		7B5AC9A321197E99006ADC15 /* LDBusMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDBusMediator.h; sourceTree = "<group>"; };
+		7B5AC9A421197E99006ADC15 /* LDBusMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDBusMediator.m; sourceTree = "<group>"; };
+		7B5AC9A621197F49006ADC15 /* LDBusConnectorPrt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDBusConnectorPrt.h; sourceTree = "<group>"; };
+		7B5AC9A7211983BE006ADC15 /* LDBusNavigator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDBusNavigator.h; sourceTree = "<group>"; };
+		7B5AC9A8211983BE006ADC15 /* LDBusNavigator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDBusNavigator.m; sourceTree = "<group>"; };
 		7B628D0620FDDFB5001E8C6D /* CoreAnimation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CoreAnimation.md; sourceTree = "<group>"; };
 		7B628D0720FDE6B1001E8C6D /* CAView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAView.h; sourceTree = "<group>"; };
 		7B628D0820FDE6B1001E8C6D /* CAView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAView.m; sourceTree = "<group>"; };
 		7B628D0A20FDE7E7001E8C6D /* AppFramework.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppFramework.pch; sourceTree = "<group>"; };
+		7B738ECC2123CFC400D8B684 /* 算法.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "算法.md"; sourceTree = "<group>"; };
 		7B8198D1211198EE00F85F84 /* KVO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = KVO.md; sourceTree = "<group>"; };
 		7B8198D221119BDB00F85F84 /* UITableView_优化.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "UITableView_优化.md"; sourceTree = "<group>"; };
 		7BA0A5BF20EEFDBD008D4370 /* UIViewController+Swizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzle.h"; sourceTree = "<group>"; };
@@ -166,6 +180,15 @@
 			path = "Ads_广告页";
 			sourceTree = "<group>";
 		};
+		7B567AD3211BDE1400654614 /* 策略_NSInvocation */ = {
+			isa = PBXGroup;
+			children = (
+				7B567AD5211BDE2700654614 /* XM.h */,
+				7B567AD4211BDE2700654614 /* XM.m */,
+			);
+			path = "策略_NSInvocation";
+			sourceTree = "<group>";
+		};
 		7B628D0520FDDF81001E8C6D /* CoreAnimation_动画 */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,10 +247,18 @@
 			children = (
 				7BF2182820746B6500F45A01 /* AppDelegate.h */,
 				7BF2182920746B6500F45A01 /* AppDelegate.m */,
+				7B5AC9A621197F49006ADC15 /* LDBusConnectorPrt.h */,
+				7B5AC9A7211983BE006ADC15 /* LDBusNavigator.h */,
+				7B5AC9A8211983BE006ADC15 /* LDBusNavigator.m */,
+				7B5AC9A321197E99006ADC15 /* LDBusMediator.h */,
+				7B5AC9A421197E99006ADC15 /* LDBusMediator.m */,
 				7B8198D1211198EE00F85F84 /* KVO.md */,
+				7B738ECC2123CFC400D8B684 /* 算法.md */,
 				7B8198D221119BDB00F85F84 /* UITableView_优化.md */,
 				7BC6CF8F20FC42CA00E09F3C /* README.md */,
 				7B5510BF211836AF0018F2B3 /* 加密解密.md */,
+				7B5AC9A121197E05006ADC15 /* 组件化架构.md */,
+				7B567AD3211BDE1400654614 /* 策略_NSInvocation */,
 				7B00C281210F0044005153EE /* Ads_广告页 */,
 				7B628D0520FDDF81001E8C6D /* CoreAnimation_动画 */,
 				7BC6CF9120FC8AE300E09F3C /* Thread_线程 */,
@@ -393,6 +424,8 @@
 				7B5510C0211836AF0018F2B3 /* 加密解密.md in Resources */,
 				7BF2185E2074819900F45A01 /* NavigationBar_image.png in Resources */,
 				7BF2183520746B6500F45A01 /* LaunchScreen.storyboard in Resources */,
+				7B5AC9A221197E05006ADC15 /* 组件化架构.md in Resources */,
+				7B738ECD2123CFC400D8B684 /* 算法.md in Resources */,
 				7BF2183220746B6500F45A01 /* Assets.xcassets in Resources */,
 				7BF2183020746B6500F45A01 /* Main.storyboard in Resources */,
 			);
@@ -478,11 +511,14 @@
 				7BF218642074D59900F45A01 /* WebViewController.m in Sources */,
 				7B2240D120EDF23300E45BDC /* SUTRuntimeMethod.m in Sources */,
 				7BF2185C2074804C00F45A01 /* BaseViewController.m in Sources */,
+				7B567AD6211BDE2700654614 /* XM.m in Sources */,
+				7B5AC9A9211983BE006ADC15 /* LDBusNavigator.m in Sources */,
 				7BA0F36B20F72902004D6987 /* NotificationDemo.m in Sources */,
 				7BA0A5C120EEFDBD008D4370 /* UIViewController+Swizzle.m in Sources */,
 				7BF2183820746B6500F45A01 /* main.m in Sources */,
 				7BA0A5C420EF052B008D4370 /* NSArray+MyArray.m in Sources */,
 				7B00C284210F00A5005153EE /* AdvertiseView.m in Sources */,
+				7B5AC9A521197E99006ADC15 /* LDBusMediator.m in Sources */,
 				7BC6CF9420FC8AFD00E09F3C /* ThreadDemo.m in Sources */,
 				7B4A6A4320EA0C9F00FA9963 /* Student.m in Sources */,
 				7B00C287210F0A73005153EE /* AdvertiseHelper.m in Sources */,

@@ -10,6 +10,7 @@
 #import "NotificationDemo.h"
 #import "Student.h"
 #import "ThreadDemo.h"
+#import "XM.h"
 @interface WebViewController ()
 @property(nonatomic,strong)CALayer *myLayer;
 @end
@@ -40,6 +41,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    XM *xm = [XM new];
+    NSString *dayStr = @"day3";
+    [xm doSomething:dayStr params:@{@"key":@"test"}];
     /*
      CALayer的使用
      */
